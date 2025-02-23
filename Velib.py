@@ -217,7 +217,8 @@ if rayon is not None:
 # Ajout des stations de recherche par rayon sur la carte
 if not st.session_state['stations_dans_rayon'].empty:
     for _, row in st.session_state['stations_dans_rayon'].iterrows():
-        icon = folium.CustomIcon("C:/Users/geographie/Downloads/dons/velib.png", icon_size=(20, 20))
+        icon_path = os.path.join(base_dir, "velib.png")
+        icon = folium.CustomIcon(icon_path, icon_size=(20, 20))
         folium.Marker(
             location=[row.geometry.y, row.geometry.x],
             tooltip=row['name'],
@@ -229,7 +230,8 @@ if not st.session_state['stations_dans_rayon'].empty:
 # Ajout des stations de recherche par quartier sur la carte
 if not st.session_state['stations_dans_quartier'].empty:
     for _, row in st.session_state['stations_dans_quartier'].iterrows():
-        icon = folium.CustomIcon("C:/Users/geographie/Downloads/dons/velib.png", icon_size=(20, 20))
+        icon_path = os.path.join(base_dir, "velib.png")
+        icon = folium.CustomIcon(icon_path, icon_size=(20, 20))
         folium.Marker(
             location=[row.geometry.y, row.geometry.x],
             tooltip=row['name'],
@@ -240,7 +242,8 @@ if not st.session_state['stations_dans_quartier'].empty:
 # Ajout des stations de recherche près de la rivière sur la carte
 if not st.session_state['stations_pres_rivière'].empty:
     for _, row in st.session_state['stations_pres_rivière'].iterrows():
-        icon = folium.CustomIcon("C:/Users/geographie/Downloads/dons/velib.png", icon_size=(20, 20))
+        icon_path = os.path.join(base_dir, "velib.png")
+        icon = folium.CustomIcon(icon_path, icon_size=(20, 20))
         folium.Marker(
             location=[row.geometry.y, row.geometry.x],
             tooltip=row['name'],
