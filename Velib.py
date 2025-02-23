@@ -1,3 +1,4 @@
+import os
 import streamlit as st  # Pour créer des applications web
 import geopandas as gpd  # Pour travailler avec des données géospatiales
 from opencage.geocoder import OpenCageGeocode  # Pour convertir une adresse en coordonnées
