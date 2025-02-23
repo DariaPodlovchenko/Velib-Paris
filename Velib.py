@@ -77,7 +77,7 @@ if 'rayon' not in st.session_state:
 
 # Fonction de géocodage
 def geocoder_adresse(adresse):
-    cle = '1f548dad679d461c872cc682cbd1fc7b'     # Clé API pour accéder au service OpenCage Geocode opencagedata.com
+    cle = 'b1a4dc4b68284835a5da6df6a58977d8'     # Clé API pour accéder au service OpenCage Geocode opencagedata.com
     geocodeur = OpenCageGeocode(cle)
     resultats = geocodeur.geocode(
         adresse,            # Adresse à géocoder
@@ -173,8 +173,8 @@ if bouton_soumettre_quartier:
 with st.form("formulaire_rayon"):
     st.write("Sélectionnez le rayon pour la recherche des stations près de la rivière :")
     options = {
-        "500 m": 5,
-        "1000 m": 10
+        "500 m": 500,
+        "1000 m": 1000
     }
     display_options = list(options.keys())
     selected_label = st.selectbox("Rayon (m)", display_options)
@@ -186,7 +186,7 @@ with st.form("formulaire_rayon"):
 def trouver_stations_pres_segments_rivière(stations, segments_rivière, distance):
     resultat = []
     for _, segment in segments_rivière.iterrows():     # Boucle à travers chaque segment de rivière
-        buffer = segment.geometry.buffer(distance / 1000)  # Buffer en mètres
+        buffer = segment.geometry.buffer(distance / 100)  # Buffer en mètres
         stations_filtrees = stations[stations.geometry.within(buffer)]  # Filtrer les stations qui se trouvent à l'intérieur du buffer
         resultat.append(stations_filtrees)   # Ajouter les stations filtrées à la liste des résultats
     if resultat:
