@@ -12,5 +12,8 @@ Points clés :
 - Analyse géospatiale avancée : Possibilité d'afficher les stations dans un **rayon défini autour d'une adresse**, dans un **quartier spécifique** ou à proximité d’une **rivière** en utilisant des buffers géométriques.  
 - Résultats visuels et interactifs : Création d'une **carte interactive Folium**, affichant les stations en fonction des critères de sélection, avec des marqueurs personnalisés et des filtres dynamiques.
 
-<img src="https://github.com/DariaPodlovchenko/Velib-Paris/raw/main/data/ex.jpg" width="600">
+Exemple de recherche de stations pour un quartier spécifique :
+<div align="center">
+    <img src="https://github.com/DariaPodlovchenko/Velib-Paris/raw/main/ex.jpg" width="600">
+</div>
 
