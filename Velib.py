@@ -30,9 +30,11 @@ st.markdown("""
 #-------------------------------------------------------------------------------------------------------------
 
 # Chemins vers les fichiers de données
-chemin_fichier_station = "C:/Users/geographie/Podlovchenko_D3/data/paris_stations_velo.geojson"
-chemin_fichier_quartier = "C:/Users/geographie/Podlovchenko_D3/data/paris_quartiers.geojson"
-chemin_fichier_rivière = "C:/Users/geographie/Podlovchenko_D3/data/paris_land_use.shp"
+base_dir = os.path.join(os.getcwd(), "data")
+
+chemin_fichier_station = os.path.join(base_dir, "paris_stations_velo.geojson")
+chemin_fichier_quartier = os.path.join(base_dir, "paris_quartiers.geojson")
+chemin_fichier_rivière = os.path.join(base_dir, "paris_land_use.shp")
 
 # Fonctions de chargement des données : station, quartier, riviere
 def charger_donnees_station(chemin):
